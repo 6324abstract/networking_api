@@ -1,4 +1,4 @@
-from .client import http_client
+from client import http_client
 import unittest
 from urllib.error import URLError, HTTPError
 
