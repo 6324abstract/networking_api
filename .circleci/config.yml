@@ -2,14 +2,15 @@ version: 2
 
 jobs:
   build:
-    working_dictionary: ~
+    working_directory: ~
     docker:
       - image: cimg/python:3.10.9
     steps:
       - checkout
       - run: python --version
+
   test:
-    working_dictionary: ~
+    working_directory: ~
     docker:
       - image: cimg/python:3.10.9
     steps:
