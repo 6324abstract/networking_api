@@ -15,7 +15,8 @@ jobs:
       - image: cimg/python:3.10.9
     steps:
       - checkout
-      - run: python p1/src/test_HttpRequest_functional.py
+      - run: python test/test_for_test.py
+
 
 workflows:
   version: 2
