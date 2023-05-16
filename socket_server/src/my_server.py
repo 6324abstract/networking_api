@@ -1,8 +1,7 @@
 import socketserver
 from xmlrpc.server import SimpleXMLRPCServer
 from xmlrpc.server import SimpleXMLRPCRequestHandler
-
-# from .. import funlib
+from funlib import xml_funs
 
 
 class Tcp_server(socketserver.BaseRequestHandler):
@@ -39,12 +38,11 @@ class Server:
         with socketserver.UDPServer((self.host, port), Udp_server) as server:
             server.serve_forever()
 
-    """
-     def start_xmlrpc(self):
-         with SimpleXMLRPCServer((self.host, self.port),
-                        requestHandler=RequestHandler) as server:
-           server.register_introspection_functions()
-           server.register_function(pow)
-           server.register_instance(funlib.xml_funs())
-           server.serve_forever()
-      """
+    def start_xmlrpc(self, port):
+        with SimpleXMLRPCServer(
+            (self.host, port), requestHandler=RequestHandler
+        ) as server:
+            server.register_introspection_functions()
+            server.register_function(pow)
+            server.register_instance(xml_funs())
+            server.serve_forever()
