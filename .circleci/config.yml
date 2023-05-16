@@ -17,7 +17,7 @@ jobs:
       - run: 
         name: Run Tests
         command: |
-        cd p1
+        cd /p1
         python -m unittest test/test_HttpRequest_functional.py
       #- run: python socket_server/src/test_tcp_udp_server_unit.py
       #- run: python -m p4_ipaddress/src/test_cidr_unit.py
