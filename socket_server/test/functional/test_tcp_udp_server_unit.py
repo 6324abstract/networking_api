@@ -7,7 +7,7 @@ import unittest
 class Test_tcp_udp_server(unittest.TestCase):
     def setUp(self) -> None:
         self.test_server = Server()
-        self.host = "localhost"
+        self.host = '127.0.0.1'
         self.tcp_port, self.udp_port = 12000, 12001
         self.client_message = "test_message"
         self.server_thread_tcp = MyThread(
