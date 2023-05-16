@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run: python p1/src/test_HttpRequest_functional.py
       - run: python socket_server/src/test_tcp_udp_server_unit.py
-
+      - run: python p4_ipaddress/src/test_cidr_unit.py
 workflows:
   version: 2
   build_and_test:
