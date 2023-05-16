@@ -1,7 +1,7 @@
 import socketserver
 from xmlrpc.server import SimpleXMLRPCServer
 from xmlrpc.server import SimpleXMLRPCRequestHandler
-from funlib import xml_funs
+from socket_server.src.funlib import xml_funs
 
 
 class Tcp_server(socketserver.BaseRequestHandler):
