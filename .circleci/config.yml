@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run: python p1/src/test_HttpRequest_functional.py
-           : python socket_server/src/test_tcp_udp_server_unit.py
+      - run: python socket_server/src/test_tcp_udp_server_unit.py
 
 workflows:
   version: 2
