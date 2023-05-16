@@ -1,6 +1,6 @@
 import unittest
 import ipaddress
-from cidr import *
+from p4_ipaddress.src.cidr import *
 
 
 class Test_cidr(unittest.TestCase):
