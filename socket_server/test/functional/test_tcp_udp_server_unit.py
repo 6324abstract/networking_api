@@ -10,15 +10,16 @@ class Test_tcp_udp_server(unittest.TestCase):
         self.host = "localhost"
         self.tcp_port, self.udp_port = 12000, 12001
         self.client_message = "test_message"
-        self.server_thread_tcp = threading.Thread(
+        self.server_thread_tcp = MyThread(
             target=self.test_server.start_tcp, args=(self.tcp_port,)
         )
-        self.server_thread_udp = threading.Thread(
+        self.server_thread_udp = MyThread(
             target=self.test_server.start_udp, args=(self.udp_port,)
         )
 
     def tearDown(self) -> None:
-        pass
+        self.server_thread_tcp.stop()
+        self.server_thread_udp.stop()
 
     def test_udp_server(self):
         self.server_thread_udp.start()
@@ -49,6 +50,15 @@ class Test_tcp_udp_server(unittest.TestCase):
 
 class Test_rpc_server(unittest.TestCase):
     pass
+
+
+class MyThread(threading.Thread):
+    def __init__(self, target=None, args=()):
+        super().__init__()
+        self._stop_flag = threading.Event()
+
+    def stop(self):
+        self._stop_flag.set()
 
 
 if __name__ == "__main__":
