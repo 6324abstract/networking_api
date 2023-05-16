@@ -1,4 +1,4 @@
-from my_server import *
+from socket_server.src.my_server import *
 import socket
 import threading
 import unittest
