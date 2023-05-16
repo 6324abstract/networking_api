@@ -14,11 +14,7 @@ jobs:
       - image: cimg/python:3.10.9
     steps:
       - checkout
-      - run: 
-         name: Run Tests
-         command: |
-         cd "/p1"
-         python -m unittest test/test_HttpRequest_functional.py
+      - run:python -m unittest /p1/test/test_HttpRequest_functional.py
       #- run: python socket_server/src/test_tcp_udp_server_unit.py
       #- run: python -m p4_ipaddress/src/test_cidr_unit.py
 workflows:
